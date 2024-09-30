@@ -44,14 +44,15 @@ except Exception as e:
     raise
 
 # Deploy the model to an endpoint
+# Deploy the model to an endpoint
 print("Deploying the model to an endpoint...")
 try:
     predictor = sklearn_model.deploy(
         initial_instance_count=1,
         instance_type='ml.m5.large',  # Adjust instance size based on needs
-        wait=True  # Wait for the deployment to complete
+        wait=False  # Set wait to False to avoid blocking
     )
-    print("Model deployed successfully. Endpoint name:", predictor.endpoint_name)
+    print("Model deployment initiated. Endpoint name:", predictor.endpoint_name)
     
     # Monitor the endpoint status
     sm_client = boto3.client('sagemaker')
