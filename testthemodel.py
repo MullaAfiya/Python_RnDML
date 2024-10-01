@@ -10,7 +10,7 @@ payload = json.dumps({
 })
 
 # Replace 'your-endpoint-name' with the actual endpoint name you created
-endpoint_name = 'sagemaker-scikit-learn-2024-09-30-17-24-55-369'  # Update this with your SageMaker endpoint name
+endpoint_name = 'sagemaker-scikit-learn-2024-10-01-05-44-45-402'  # Update this with your SageMaker endpoint name
 
 # Invoke the SageMaker endpoint
 try:
