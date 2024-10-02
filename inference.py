@@ -5,10 +5,18 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 
 def model_fn(model_dir):
-    """Load the model from the model_dir."""
+    """Load the model from the model_dir and ensure all trees have 'n_features_' attribute."""
     model_path = os.path.join(model_dir, 'random_forest_model.pkl')
+    
+    # Load the model
     with open(model_path, 'rb') as model_file:
         model = pickle.load(model_file)
+    
+    # Fix missing 'n_features_' attribute for each tree in the forest
+    for estimator in model.estimators_:
+        if not hasattr(estimator, 'n_features_'):
+            estimator.n_features_ = model.n_features_in_  # Set it to the correct number of features
+
     return model
 
 def input_fn(request_body, request_content_type='application/json'):
