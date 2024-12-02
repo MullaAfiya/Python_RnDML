@@ -5,7 +5,9 @@ import time
 import os
 
 # Define your SageMaker execution role ARN here
-sagemaker_execution_role = 'arn:aws:iam::746669191450:role/service-role/AmazonSageMaker-ExecutionRole-20240925T171407'  # Replace with your role ARN
+sagemaker_execution_role = 'arn:aws:iam::474668386767:role/SageMakerRl' 
+
+#'arn:aws:iam::746669191450:role/service-role/AmazonSageMaker-ExecutionRole-20240925T171407'  # Replace with your role ARN
 
 # Define S3 paths
 s3_model_uri = 's3://afiya-ml1-s3/NewMLRnD_artifacts.tar.gz'  # Path to the .tar.gz file
