@@ -5,7 +5,7 @@ import time
 import os
 
 # Define your SageMaker execution role ARN here
-sagemaker_execution_role = 'arn:aws:iam::474668386767:role/SageMakerRl' 
+sagemaker_execution_role = 'arn:aws:iam::474668386767:role/AmazonSageMakerExecutionRole' 
 
 #'arn:aws:iam::746669191450:role/service-role/AmazonSageMaker-ExecutionRole-20240925T171407'  # Replace with your role ARN
 
